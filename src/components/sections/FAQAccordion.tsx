@@ -46,17 +46,19 @@ interface FAQAccordionProps {
   faqs?: FAQItem[];
   title?: string;
   subtitle?: string;
+  bgColor?: string;
 }
 
 export default function FAQAccordion({
   faqs = defaultFAQs,
   title = "The fine print,",
   subtitle = "edited.",
+  bgColor = "bg-cream",
 }: FAQAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 md:py-32 bg-sand">
+    <section className={`py-24 md:py-32 ${bgColor} border-b border-border-subtle`}>
       <div className="max-w-[860px] mx-auto px-6 md:px-10">
         <motion.div
           className="text-center mb-12"

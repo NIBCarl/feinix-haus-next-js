@@ -12,7 +12,7 @@ const logos = [
 
 export default function PressReel() {
   return (
-    <section className="py-20 md:py-24 bg-sand border-y border-border-subtle">
+    <section className="py-20 md:py-24 bg-sand-deep border-y border-border-subtle">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10">
         <motion.div
           className="text-center mb-12"

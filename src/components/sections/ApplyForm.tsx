@@ -5,7 +5,7 @@ import { fadeLeft, fadeRight, viewportOnce } from "@/lib/animations";
 
 export default function ApplyForm() {
   return (
-    <section className="py-24 md:py-32 bg-ink-warm text-cream" id="apply">
+    <section className="py-16 md:py-32 bg-ink-warm text-cream" id="apply">
       <div className="max-w-[1100px] mx-auto px-6 md:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
           {/* Left Column */}

@@ -7,7 +7,7 @@ import { fadeUp, viewportOnce } from "@/lib/animations";
 
 export default function FeaturedEssay() {
   return (
-    <section className="py-24 md:py-32 bg-cream">
+    <section className="py-16 md:py-32 bg-cream" aria-label="Featured essay from the editorial">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10">
         <motion.div
           initial="hidden"
@@ -30,6 +30,8 @@ export default function FeaturedEssay() {
           whileInView="visible"
           viewport={viewportOnce}
           variants={fadeUp}
+          itemScope
+          itemType="https://schema.org/BlogPosting"
         >
           {/* Image */}
           <div className="overflow-hidden rounded-sm group">
@@ -39,18 +41,23 @@ export default function FeaturedEssay() {
               </span>
               <Image
                 src="/editorial/framer-reading-table.png"
-                alt="The Reading Table — From the Margins"
+                alt="I Am Not Here to Inspire You — featured essay by Kelly Gunn on The Reading Table"
                 width={700}
                 height={600}
                 className="w-full h-auto object-cover rounded-sm transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+                itemProp="image"
               />
               <div className="flex justify-between items-center mt-3 px-0.5">
                 <span className="text-[0.78rem] tracking-[0.12em] uppercase text-text-muted font-medium">
                   The Reading Table
                 </span>
-                <span className="text-[0.78rem] tracking-[0.12em] uppercase text-text-muted font-medium">
+                <time
+                  dateTime="2026-06"
+                  className="text-[0.78rem] tracking-[0.12em] uppercase text-text-muted font-medium"
+                  itemProp="datePublished"
+                >
                   Jun 2026
-                </span>
+                </time>
               </div>
             </div>
           </div>
@@ -58,31 +65,32 @@ export default function FeaturedEssay() {
           {/* Content */}
           <div>
             <p className="text-[0.8rem] font-sans tracking-[0.1em] uppercase text-text-muted mb-4">
-              From the Margins · Jun 26 · 6 min read
+              From the Margins · <time dateTime="2026-06">Jun 26</time> · 6 min read
             </p>
-            <h3 className="font-serif text-2xl md:text-3xl text-ink-warm font-light mb-4">
+            <h3 className="font-serif text-2xl md:text-3xl text-ink-warm font-light mb-4" itemProp="headline">
               I Am Not Here to <em className="italic">Inspire You</em>
             </h3>
-            <p className="text-lg text-text-secondary leading-relaxed mb-6 drop-cap">
+            <p className="text-lg text-text-secondary leading-relaxed mb-6 drop-cap" itemProp="description">
               There comes a point when surviving stops being enough. A reflection
               on moving past inspiration tropes into participation,
               self-authorship, and what comes next.
             </p>
 
             {/* Byline */}
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-6" itemProp="author" itemScope itemType="https://schema.org/Person">
               <Image
                 src="/editorial/kelly-profile.png"
                 alt="Kelly Gunn portrait"
                 width={38}
                 height={38}
                 className="rounded-full object-cover"
+                itemProp="image"
               />
               <div>
-                <strong className="text-sm font-sans font-semibold text-ink-warm block">
+                <strong className="text-sm font-sans font-semibold text-ink-warm block" itemProp="name">
                   Kelly Gunn
                 </strong>
-                <span className="text-sm text-text-muted">
+                <span className="text-sm text-text-muted" itemProp="jobTitle">
                   Editor-in-Chief
                 </span>
               </div>

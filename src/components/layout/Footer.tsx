@@ -5,9 +5,9 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function Footer() {
   return (
-    <footer className="bg-ink-warm text-cream">
+    <footer className="bg-ink-warm text-cream" role="contentinfo">
       {/* Newsletter Invitation */}
-      <div className="border-b border-white/10">
+      <div className="border-b border-white/10" aria-label="Newsletter signup">
         <ScrollReveal>
           <div className="max-w-[700px] mx-auto text-center py-20 px-6">
             <span className="text-[0.78rem] font-sans font-medium tracking-[0.2em] uppercase text-accent mb-4 block">

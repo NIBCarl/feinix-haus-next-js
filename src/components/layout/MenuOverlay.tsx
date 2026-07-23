@@ -37,7 +37,7 @@ export default function MenuOverlay({ onClose }: MenuOverlayProps) {
         </Link>
         <button
           onClick={onClose}
-          className="text-ink-warm text-xl p-2 hover:text-accent transition-colors cursor-pointer"
+          className="text-ink-warm text-xl min-w-[44px] min-h-[44px] flex items-center justify-center hover:text-accent transition-colors cursor-pointer"
           aria-label="Close menu"
         >
           ✕

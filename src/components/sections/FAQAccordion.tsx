@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useId } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeUp, viewportOnce } from "@/lib/animations";
 
@@ -56,9 +56,13 @@ export default function FAQAccordion({
   bgColor = "bg-cream",
 }: FAQAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const uniqueId = useId();
 
   return (
-    <section className={`py-24 md:py-32 ${bgColor} border-b border-border-subtle`}>
+    <section
+      className={`py-16 md:py-32 ${bgColor} border-b border-border-subtle`}
+      aria-label="Frequently asked questions"
+    >
       <div className="max-w-[860px] mx-auto px-6 md:px-10">
         <motion.div
           className="text-center mb-12"
@@ -81,48 +85,62 @@ export default function FAQAccordion({
           whileInView="visible"
           viewport={viewportOnce}
           variants={fadeUp}
+          role="list"
         >
-          {faqs.map((faq, i) => (
-            <div
-              key={i}
-              className="border-b border-border-subtle"
-            >
-              <button
-                className="w-full flex items-center justify-between py-6 text-left cursor-pointer group"
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                aria-expanded={openIndex === i}
+          {faqs.map((faq, i) => {
+            const questionId = `${uniqueId}-question-${i}`;
+            const answerId = `${uniqueId}-answer-${i}`;
+            const isOpen = openIndex === i;
+
+            return (
+              <div
+                key={i}
+                className="border-b border-border-subtle"
+                role="listitem"
               >
-                <span className="font-sans text-base md:text-lg font-medium text-ink-warm pr-4 group-hover:text-accent transition-colors duration-300">
-                  {faq.question}
-                </span>
-                <motion.span
-                  className="text-xl text-text-muted flex-shrink-0"
-                  animate={{ rotate: openIndex === i ? 45 : 0 }}
-                  transition={{ duration: 0.3 }}
+                <button
+                  id={questionId}
+                  className="w-full flex items-center justify-between py-6 text-left cursor-pointer group"
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  aria-expanded={isOpen}
+                  aria-controls={answerId}
                 >
-                  +
-                </motion.span>
-              </button>
-              <AnimatePresence initial={false}>
-                {openIndex === i && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{
-                      height: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
-                      opacity: { duration: 0.25 },
-                    }}
-                    className="overflow-hidden"
+                  <span className="font-sans text-base md:text-lg font-medium text-ink-warm pr-4 group-hover:text-accent transition-colors duration-300">
+                    {faq.question}
+                  </span>
+                  <motion.span
+                    className="text-xl text-text-muted flex-shrink-0 w-6 h-6 flex items-center justify-center"
+                    animate={{ rotate: isOpen ? 45 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    aria-hidden="true"
                   >
-                    <p className="text-base text-text-secondary leading-relaxed pb-6 pr-8">
-                      {faq.answer}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ))}
+                    +
+                  </motion.span>
+                </button>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      id={answerId}
+                      role="region"
+                      aria-labelledby={questionId}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{
+                        height: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
+                        opacity: { duration: 0.25 },
+                      }}
+                      className="overflow-hidden"
+                    >
+                      <p className="text-base text-text-secondary leading-relaxed pb-6 pr-8">
+                        {faq.answer}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

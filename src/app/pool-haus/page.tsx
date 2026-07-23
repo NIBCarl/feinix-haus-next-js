@@ -7,9 +7,25 @@ import FAQAccordion from "@/components/sections/FAQAccordion";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Pool Haus — The Gathering Place · Feinix Haus",
+  title: "Pool Haus — Community & Gathering Place for Women After Disruption · Feinix Haus",
   description:
-    "The gathering place behind the publishing house. Playlists, Sunday conversations, Open Haus calls, and a circle that values depth over performance.",
+    "Pool Haus is the community behind Feinix Haus. A curated gathering space on Skool with free and paid membership ($22/month). Monthly Open Haus calls, weekly live sessions, essays, and a circle that values depth over performance.",
+  alternates: {
+    canonical: "/pool-haus",
+  },
+  openGraph: {
+    title: "Pool Haus — The Gathering Place · Feinix Haus",
+    description:
+      "A curated community for women in after. Free and paid membership with live calls, essays, and Open Haus gatherings.",
+    images: [
+      {
+        url: "/covers/framer-pool-haus.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Pool Haus — The Gathering Place by Feinix Haus",
+      },
+    ],
+  },
 };
 
 const pillars = [
@@ -63,6 +79,56 @@ const poolFaqs = [
   },
 ];
 
+/* FAQPage JSON-LD */
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: poolFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
+/* Product JSON-LD for membership tiers */
+const productJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Pool Haus — Free Community Membership",
+    description:
+      "Free access to the Feinix Haus community on Skool. Includes community feed, monthly Open Haus gatherings, welcome video, and free member resources.",
+    brand: { "@type": "Brand", name: "Feinix Haus" },
+    url: "https://feinixhaus.com/pool-haus",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Pool Haus — Full Membership",
+    description:
+      "Full access to Pool Haus community at $22/month with a 7-day free trial. Includes weekly live calls, members-only essays, full classroom archive, recordings, and the rolling leaderboard.",
+    brand: { "@type": "Brand", name: "Feinix Haus" },
+    url: "https://feinixhaus.com/pool-haus",
+    offers: {
+      "@type": "Offer",
+      price: "22",
+      priceCurrency: "USD",
+      priceValidUntil: "2027-12-31",
+      availability: "https://schema.org/InStock",
+      url: "https://www.skool.com/unapologetically-after",
+    },
+  },
+];
+
 export default function PoolHausPage() {
   return (
     <>
@@ -77,7 +143,7 @@ export default function PoolHausPage() {
         accentColor="text-[#E8B89A]"
       />
 
-      <section className="py-20 md:py-28 bg-cream">
+      <section className="py-20 md:py-28 bg-cream" aria-label="What Pool Haus includes">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <ScrollReveal>
             <DetailGrid items={pillars} />
@@ -85,11 +151,11 @@ export default function PoolHausPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-cream-warm">
+      <section className="py-20 md:py-28 bg-cream-warm" aria-label="Inside Pool Haus">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <VolumeFeature
             imageSrc="/covers/framer-pool-haus.jpg"
-            imageAlt="Pool Haus — The Gathering Place"
+            imageAlt="Pool Haus — The Gathering Place for women after disruption"
             caption="Pool Haus"
             subcaption="Community · Skool"
             eyebrow="What You'll Find Inside"
@@ -115,6 +181,19 @@ export default function PoolHausPage() {
         title="Questions about"
         subtitle="the Pool."
       />
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      {productJsonLd.map((product, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(product) }}
+        />
+      ))}
     </>
   );
 }

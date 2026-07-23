@@ -37,7 +37,7 @@ const cards = [
 
 export default function JournalGrid() {
   return (
-    <section className="py-24 md:py-32 bg-cream-warm">
+    <section className="py-16 md:py-32 bg-cream-warm">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10">
         {/* Section Header */}
         <motion.div
@@ -49,7 +49,7 @@ export default function JournalGrid() {
         >
           <div>
             <span className="editorial-meta mb-3 block">
-              THE PUBLISHING HOUSE · EDITIONS &amp; ROOMS
+              THE LIFESTYLE COMMUNITY · EDITIONS &amp; ROOMS
             </span>
             <h2 className="font-serif text-3xl md:text-4xl text-ink-warm font-light">
               Inside the <em className="italic">House.</em>

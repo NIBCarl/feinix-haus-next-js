@@ -52,7 +52,7 @@ const tiers: Tier[] = [
 
 export default function MembershipTiers() {
   return (
-    <section className="py-24 md:py-32 bg-pool text-cream">
+    <section className="py-16 md:py-32 bg-pool text-cream">
       <div className="max-w-[1000px] mx-auto px-6 md:px-10">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-8"

@@ -58,7 +58,7 @@ export default function Header() {
           <div className="max-w-[1480px] mx-auto flex items-center justify-center relative">
             <button 
               onClick={() => setTickerIndex((prev) => (prev - 1 + tickerItems.length) % tickerItems.length)}
-              className="text-sand text-lg opacity-60 hover:opacity-100 hover:text-accent transition-opacity px-2 absolute left-4 md:left-auto md:relative mr-4"
+              className="text-sand text-lg opacity-60 hover:opacity-100 hover:text-accent transition-opacity min-w-[44px] min-h-[44px] flex items-center justify-center absolute left-0 md:left-auto md:relative mr-4"
               aria-label="Previous announcement"
             >
               ‹
@@ -87,7 +87,7 @@ export default function Header() {
             </div>
             <button 
               onClick={() => setTickerIndex((prev) => (prev + 1) % tickerItems.length)}
-              className="text-sand text-lg opacity-60 hover:opacity-100 hover:text-accent transition-opacity px-2 absolute right-4 md:right-auto md:relative ml-4"
+              className="text-sand text-lg opacity-60 hover:opacity-100 hover:text-accent transition-opacity min-w-[44px] min-h-[44px] flex items-center justify-center absolute right-0 md:right-auto md:relative ml-4"
               aria-label="Next announcement"
             >
               ›
@@ -104,7 +104,7 @@ export default function Header() {
               FEINIX HAUS
             </span>
             <span className="text-[0.68rem] font-sans font-semibold tracking-[0.36em] uppercase text-accent mt-0.5">
-              A PUBLISHING HOUSE
+              A LIFESTYLE COMMUNITY
             </span>
           </Link>
 
@@ -278,16 +278,16 @@ export default function Header() {
           </nav>
           
           {/* Mobile Hamburger Layout */}
-          <div className="lg:hidden absolute top-[1.4rem] right-6 flex items-center">
+          <div className="lg:hidden absolute top-[1rem] right-4 flex items-center">
             <button
-              className="flex flex-col gap-[5px] p-2 cursor-pointer z-50 w-[30px] h-[30px] items-center justify-center relative group"
+              className="flex flex-col gap-[5px] p-3 cursor-pointer z-50 w-[44px] h-[44px] items-center justify-center relative group"
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
               aria-expanded={menuOpen}
             >
-              <span className="block w-full h-[1.5px] bg-ink-warm group-hover:bg-accent transition-colors" />
-              <span className="block w-full h-[1.5px] bg-ink-warm group-hover:bg-accent transition-colors" />
-              <span className="block w-full h-[1.5px] bg-ink-warm group-hover:bg-accent transition-colors" />
+              <span className="block w-5 h-[1.5px] bg-ink-warm group-hover:bg-accent transition-colors" />
+              <span className="block w-5 h-[1.5px] bg-ink-warm group-hover:bg-accent transition-colors" />
+              <span className="block w-5 h-[1.5px] bg-ink-warm group-hover:bg-accent transition-colors" />
             </button>
           </div>
 

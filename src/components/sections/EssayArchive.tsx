@@ -67,7 +67,7 @@ export default function EssayArchive() {
       : essays.filter((e) => e.topic === activeTopic);
 
   return (
-    <section className="py-24 md:py-32 bg-cream-warm">
+    <section className="py-16 md:py-32 bg-cream-warm">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10">
         <motion.div
           className="mb-8"

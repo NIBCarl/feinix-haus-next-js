@@ -1,0 +1,33 @@
+# Feinix Haus — robots.txt
+# Allow all crawlers including AI search bots
+
+User-agent: *
+Allow: /
+
+# Explicitly allow AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block training-only crawlers (not search)
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://feinixhaus.com/sitemap.xml

@@ -7,9 +7,25 @@ import ApplyForm from "@/components/sections/ApplyForm";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "The Haus Edit — Private Editorial · Feinix Haus",
+  title: "The Haus Edit — Private Editorial Experience for Women in Transition · Feinix Haus",
   description:
-    "A private editorial for your life. Together we refine, clarify, and shape your next chapter into a hand-bound, printed Volume One.",
+    "The Haus Edit is a private, three-month editorial experience by Kelly Gunn. We refine, clarify, and shape your next chapter into a hand-bound, printed Volume One. Not coaching, not therapy — editorial direction for women rewriting life after disruption.",
+  alternates: {
+    canonical: "/the-haus-edit",
+  },
+  openGraph: {
+    title: "The Haus Edit — Private Editorial Experience · Feinix Haus",
+    description:
+      "A private editorial for your life. Three months of structured conversations and deep editorial passes, culminating in a hand-bound, printed Volume One.",
+    images: [
+      {
+        url: "/covers/framer-volume-one.jpg",
+        width: 1200,
+        height: 630,
+        alt: "The Haus Edit — Volume One, Hand-bound Limited Edition",
+      },
+    ],
+  },
 };
 
 const details = [
@@ -63,6 +79,42 @@ const hausFaqs = [
   },
 ];
 
+/* FAQPage JSON-LD */
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: hausFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
+/* Service JSON-LD */
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "The Haus Edit — Private Editorial Experience",
+  provider: {
+    "@type": "Organization",
+    name: "Feinix Haus",
+    url: "https://feinixhaus.com",
+  },
+  description:
+    "A private, three-month editorial experience for women in transition. Structured conversations, reflective assignments, and deep editorial passes — culminating in a hand-bound, printed Volume One.",
+  serviceType: "Editorial Direction",
+  areaServed: "Worldwide",
+  url: "https://feinixhaus.com/the-haus-edit",
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/LimitedAvailability",
+    description: "By application only. Pricing shared upon accepted application.",
+  },
+};
+
 export default function TheHausEditPage() {
   return (
     <>
@@ -74,7 +126,7 @@ export default function TheHausEditPage() {
         breadcrumb="The Haus Edit"
       />
 
-      <section className="py-20 md:py-28 bg-cream">
+      <section className="py-20 md:py-28 bg-cream" aria-label="What the Haus Edit includes">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <ScrollReveal>
             <DetailGrid items={details} />
@@ -82,11 +134,11 @@ export default function TheHausEditPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-cream-warm">
+      <section className="py-20 md:py-28 bg-cream-warm" aria-label="Volume One artifact">
         <div className="max-w-[1200px] mx-auto px-6 md:px-10">
           <VolumeFeature
             imageSrc="/covers/framer-volume-one.jpg"
-            imageAlt="Volume One — Hand-bound limited edition"
+            imageAlt="Volume One — Hand-bound limited edition printed volume by Feinix Haus"
             caption="Volume One"
             subcaption="Limited Edition · Printed"
             eyebrow="The Artifact"
@@ -112,6 +164,16 @@ export default function TheHausEditPage() {
       />
 
       <ApplyForm />
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
     </>
   );
 }

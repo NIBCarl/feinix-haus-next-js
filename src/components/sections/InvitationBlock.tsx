@@ -6,7 +6,7 @@ import { fadeUp, viewportOnce } from "@/lib/animations";
 
 export default function InvitationBlock() {
   return (
-    <section className="py-24 md:py-32 bg-cream">
+    <section className="py-16 md:py-32 bg-cream" aria-label="Get started with Feinix Haus">
       <div className="max-w-[700px] mx-auto px-6 md:px-10 text-center">
         <motion.div
           initial="hidden"
@@ -24,16 +24,16 @@ export default function InvitationBlock() {
             Read the essays, join the community, or apply for the editorial
             work. Whichever door, the house is open.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
             <Link
               href="/pool-haus"
-              className="inline-flex items-center gap-2 px-7 py-3.5 border border-ink-warm text-ink-warm text-[0.85rem] font-sans font-medium tracking-[0.06em] uppercase rounded-sm hover:bg-ink-warm hover:text-cream transition-all duration-500"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-ink-warm text-ink-warm text-[0.85rem] font-sans font-medium tracking-[0.06em] uppercase rounded-sm hover:bg-ink-warm hover:text-cream transition-all duration-500 w-full sm:w-auto"
             >
               Join Pool Haus <span>→</span>
             </Link>
             <Link
               href="/the-haus-edit#apply"
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-ink-warm text-cream text-[0.85rem] font-sans font-medium tracking-[0.06em] uppercase rounded-sm hover:bg-accent transition-colors duration-500"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-ink-warm text-cream text-[0.85rem] font-sans font-medium tracking-[0.06em] uppercase rounded-sm hover:bg-accent transition-colors duration-500 w-full sm:w-auto"
             >
               Apply · Haus Edit <span>→</span>
             </Link>

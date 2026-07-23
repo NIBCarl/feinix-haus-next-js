@@ -74,7 +74,7 @@ export default function AboutPage() {
             {/* Left Dark Box */}
             <div className="w-full lg:w-[65%] bg-[#181818] pt-16 pb-20 px-8 md:px-16 lg:pl-20 xl:pl-28 lg:pr-[280px] xl:pr-[380px] relative z-10 flex flex-col justify-center">
               <ScrollReveal>
-                <h2 className="font-serif text-[clamp(4rem,6vw,7rem)] text-cream uppercase tracking-wide mb-4 leading-[1.05] whitespace-nowrap">
+                <h2 className="font-serif text-[clamp(3.2rem,10vw,7rem)] text-cream uppercase tracking-wide mb-4 leading-[1.05] break-words sm:whitespace-nowrap">
                   HI, I&apos;M KELLY
                 </h2>
                 <p className="font-serif text-2xl md:text-3xl text-cream/90 italic leading-snug mb-8 max-w-[28rem]">
@@ -115,7 +115,7 @@ export default function AboutPage() {
             </div>
 
             {/* Right Large Image */}
-            <div className="w-full lg:w-[35%] relative min-h-[600px] lg:min-h-0 bg-[#d8d9d4] z-0 overflow-hidden">
+            <div className="w-full lg:w-[35%] relative min-h-[500px] md:min-h-[600px] lg:min-h-0 bg-[#d8d9d4] z-0 overflow-hidden">
               <Image 
                 src="/editorial/kelly-profile3.jpg" 
                 alt="Kelly Gunn Full Portrait" 
@@ -126,19 +126,6 @@ export default function AboutPage() {
 
             {/* Center Overlapping Image (Desktop) */}
             <div className="hidden lg:block absolute left-[65%] top-1/2 -translate-x-[65%] -translate-y-1/2 w-[340px] xl:w-[400px] z-20 shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
-              <ScrollReveal delay={0.2}>
-                <Image 
-                  src="/editorial/kelly-profile2.jpg" 
-                  alt="Kelly Gunn Profile" 
-                  width={600} 
-                  height={800} 
-                  className="w-full h-auto object-cover grayscale-[20%]" 
-                />
-              </ScrollReveal>
-            </div>
-
-            {/* Mobile Overlapping Image */}
-            <div className="block lg:hidden absolute left-6 top-[40%] sm:top-[45%] -translate-y-1/2 w-[55%] sm:w-[45%] max-w-[280px] z-20 shadow-2xl border-4 border-[#181818]">
               <ScrollReveal delay={0.2}>
                 <Image 
                   src="/editorial/kelly-profile2.jpg" 

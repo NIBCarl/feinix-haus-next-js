@@ -60,7 +60,7 @@ export default function PageHero({
 
           <p
             className={`text-lg md:text-xl leading-relaxed max-w-xl ${
-              bgColor.includes("pool") ? "text-cream/80" : "text-text-secondary"
+              textColor === "text-cream" ? "text-cream/80" : "text-text-secondary"
             }`}
           >
             {lead}

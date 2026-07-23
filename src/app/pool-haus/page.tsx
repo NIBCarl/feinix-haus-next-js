@@ -138,7 +138,7 @@ export default function PoolHausPage() {
         titleEmphasis="Come sit."
         lead="The gathering place behind the publishing house. Playlists, Sunday conversations, Open Haus calls, and a circle that values depth over performance."
         breadcrumb="Pool Haus"
-        bgColor="bg-pool"
+        bgColor="bg-[#181818]"
         textColor="text-cream"
         accentColor="text-[#E8B89A]"
       />

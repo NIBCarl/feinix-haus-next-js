@@ -52,7 +52,7 @@ const tiers: Tier[] = [
 
 export default function MembershipTiers() {
   return (
-    <section className="py-16 md:py-32 bg-pool text-cream">
+    <section className="py-16 md:py-32 bg-[#181818] text-cream">
       <div className="max-w-[1000px] mx-auto px-6 md:px-10">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
@@ -103,7 +103,7 @@ export default function MembershipTiers() {
                 rel="noopener noreferrer"
                 className={`inline-flex items-center gap-2 px-7 py-3.5 text-[0.85rem] font-sans font-medium tracking-[0.06em] uppercase rounded-sm transition-all duration-500 w-full justify-center ${
                   tier.featured
-                    ? "bg-cream text-pool hover:bg-sand"
+                    ? "bg-cream text-[#181818] hover:bg-sand"
                     : "border border-cream/30 text-cream hover:bg-white/10"
                 }`}
               >

@@ -33,7 +33,7 @@ export default function HeroSection() {
           >
             <span>A LIFESTYLE & FITNESS COMMUNITY</span>
             <span className="hidden sm:block w-1 h-1 rounded-full bg-accent" />
-            <span>EST. 2024</span>
+            <span>EST. 2025</span>
           </motion.div>
           
           <motion.h1 

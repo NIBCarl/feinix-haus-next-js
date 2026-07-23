@@ -72,7 +72,7 @@ const organizationJsonLd = {
   logo: "https://feinixhaus.com/covers/framer-hero.jpg",
   description:
     "Feinix Haus is an editorial publishing house and gathering place for women rewriting life after disruption. Founded by Kelly Gunn in Palm Springs, it offers private editorial experiences, long-form essays, and an intentional community.",
-  foundingDate: "2024",
+  foundingDate: "2025",
   founder: {
     "@type": "Person",
     name: "Kelly Gunn",

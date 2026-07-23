@@ -6,11 +6,17 @@ import { textMaskContainer, textMaskLine, fadeRight, viewportOnce } from "@/lib/
 
 export default function PhilosophyBlock() {
   return (
-    <section className="py-16 md:py-32 bg-cream" aria-label="Editorial philosophy of Feinix Haus">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-          {/* Text Column */}
+    <section className="py-20 md:py-32 relative bg-cream overflow-hidden" aria-label="Editorial philosophy of Feinix Haus">
+      
+      {/* Right side dark background (Desktop) */}
+      <div className="absolute top-0 right-0 w-full lg:w-[45vw] h-full bg-[#181818] z-0 hidden lg:block" />
+
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
+          
+          {/* Text Column (Left) */}
           <motion.div
+            className="w-full lg:w-[50%] lg:pr-16 xl:pr-24"
             variants={textMaskContainer}
             initial="hidden"
             whileInView="visible"
@@ -24,14 +30,14 @@ export default function PhilosophyBlock() {
             </motion.span>
 
             <motion.h2
-              className="font-serif text-3xl md:text-4xl lg:text-5xl text-ink-warm font-light leading-tight mb-6"
+              className="font-serif text-4xl md:text-5xl lg:text-6xl text-ink-warm font-light leading-tight mb-8"
               variants={textMaskLine}
             >
               Start <em className="italic">living.</em>
             </motion.h2>
 
             <motion.p
-              className="text-lg text-text-secondary leading-relaxed drop-cap"
+              className="text-[1.1rem] md:text-xl text-text-secondary leading-relaxed drop-cap max-w-xl"
               variants={textMaskLine}
             >
               The wellness industry sells the idea that if you visualize hard enough 
@@ -51,29 +57,34 @@ export default function PhilosophyBlock() {
             </p>
           </motion.div>
 
-          {/* Portrait Column */}
+          {/* Portrait Column (Right) */}
           <motion.div
+            className="w-full lg:w-[50%] relative"
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
             variants={fadeRight}
           >
-            <div className="photo-mat">
-              <Image
-                src="/editorial/kelly-portrait.png"
-                alt="Kelly Gunn — Founder and Editor-in-Chief of Feinix Haus, Palm Springs"
-                width={600}
-                height={720}
-                className="w-full h-auto object-cover rounded-sm"
-              />
-              <div className="flex justify-between items-center mt-3 px-0.5">
-                <span className="text-[0.78rem] tracking-[0.12em] uppercase text-text-muted font-medium">
-                  Kelly Gunn
-                </span>
-                <span className="text-[0.78rem] tracking-[0.12em] uppercase text-text-muted font-medium">
-                  Founder &amp; Editor-in-Chief
-                </span>
-              </div>
+            {/* Mobile dark background */}
+            <div className="absolute inset-0 bg-[#181818] translate-x-6 translate-y-6 lg:hidden -z-10" />
+            
+            <Image
+              src="/editorial/kelly-profile4.png"
+              alt="Kelly Gunn — Founder and Editor-in-Chief of Feinix Haus"
+              width={800}
+              height={1000}
+              quality={100}
+              unoptimized
+              className="w-full h-auto object-cover shadow-2xl relative z-10"
+            />
+            
+            <div className="absolute bottom-4 left-4 lg:-left-6 lg:bottom-12 z-20 flex flex-col items-start hidden">
+              <span className="text-[0.75rem] tracking-[0.15em] uppercase text-cream bg-[#181818] px-3 py-1 mb-1">
+                Kelly Gunn
+              </span>
+              <span className="text-[0.70rem] tracking-[0.15em] uppercase text-cream/80 bg-[#181818] px-3 py-1">
+                Founder &amp; Editor
+              </span>
             </div>
           </motion.div>
         </div>

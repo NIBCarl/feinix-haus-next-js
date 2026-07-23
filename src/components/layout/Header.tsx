@@ -99,11 +99,11 @@ export default function Header() {
         <div className="max-w-[1480px] mx-auto px-6 md:px-10 py-5 lg:pb-3 flex flex-col items-center gap-4 relative">
           
           {/* Centered Logo */}
-          <Link href="/" className="flex flex-col items-center gap-1 group" aria-label="Feinix Haus — Home">
-            <span className="text-[1.95rem] font-serif font-medium tracking-[0.32em] uppercase text-ink-warm leading-none transition-transform duration-300 group-hover:scale-105">
+          <Link href="/" className="flex flex-col items-center gap-0.5 md:gap-1 group" aria-label="Feinix Haus — Home">
+            <span className="text-[1.25rem] sm:text-[1.5rem] md:text-[1.95rem] font-serif font-medium tracking-[0.25em] md:tracking-[0.32em] uppercase text-ink-warm leading-[1.2] md:leading-none transition-transform duration-300 group-hover:scale-105 text-center">
               FEINIX HAUS
             </span>
-            <span className="text-[0.68rem] font-sans font-semibold tracking-[0.36em] uppercase text-accent mt-0.5">
+            <span className="text-[0.55rem] md:text-[0.68rem] font-sans font-semibold tracking-[0.25em] md:tracking-[0.36em] uppercase text-accent mt-0 md:mt-0.5 text-center">
               A LIFESTYLE COMMUNITY
             </span>
           </Link>

@@ -44,7 +44,7 @@ export default function FeaturedEssay() {
                 alt="I Am Not Here to Inspire You — featured essay by Kelly Gunn on The Reading Table"
                 width={700}
                 height={600}
-                className="w-full h-auto object-cover rounded-sm transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+                className="w-full aspect-[4/5] md:aspect-[3/4] lg:h-auto object-cover rounded-sm transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
                 itemProp="image"
               />
               <div className="flex justify-between items-center mt-3 px-0.5">

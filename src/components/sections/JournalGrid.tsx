@@ -38,7 +38,7 @@ const cards = [
 export default function JournalGrid() {
   return (
     <section className="py-16 md:py-32 bg-cream-warm">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         {/* Section Header */}
         <motion.div
           className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14"
@@ -48,10 +48,10 @@ export default function JournalGrid() {
           variants={fadeUp}
         >
           <div>
-            <span className="editorial-meta mb-3 block">
+            <span className="editorial-meta mb-3 block text-[0.85rem]">
               THE LIFESTYLE COMMUNITY · EDITIONS &amp; ROOMS
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl text-ink-warm font-light">
+            <h2 className="font-serif text-4xl md:text-5xl text-ink-warm font-light">
               Inside the <em className="italic">House.</em>
             </h2>
           </div>
@@ -68,7 +68,7 @@ export default function JournalGrid() {
 
         {/* Card Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
@@ -84,26 +84,26 @@ export default function JournalGrid() {
                 <Image
                   src={card.image}
                   alt={card.alt}
-                  width={400}
-                  height={280}
-                  className="w-full h-56 object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
+                  width={600}
+                  height={800}
+                  className="w-full aspect-square sm:aspect-auto sm:h-[30rem] object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
                 />
               </div>
-              <span className="text-[0.75rem] font-sans font-medium tracking-[0.15em] uppercase text-text-muted mb-2 block">
+              <span className="text-[0.85rem] font-sans font-medium tracking-[0.15em] uppercase text-text-muted mb-2 block">
                 {card.tag}
               </span>
               <Link
                 href={card.link}
-                className="font-serif text-xl text-ink-warm hover:text-accent transition-colors duration-300 block mb-2"
+                className="font-serif text-3xl md:text-4xl text-ink-warm hover:text-accent transition-colors duration-300 block mb-3"
               >
                 {card.title}
               </Link>
-              <p className="text-base text-text-secondary leading-relaxed mb-4">
+              <p className="text-lg text-text-secondary leading-relaxed mb-4">
                 {card.desc}
               </p>
               <Link
                 href={card.link}
-                className="text-[0.82rem] font-sans font-medium tracking-[0.08em] uppercase text-ink-warm hover:text-accent transition-colors duration-300 group/link"
+                className="text-[0.9rem] font-sans font-medium tracking-[0.08em] uppercase text-ink-warm hover:text-accent transition-colors duration-300 group/link"
               >
                 {card.linkText}{" "}
                 <span className="inline-block transition-transform duration-300 group-hover/link:translate-x-1">

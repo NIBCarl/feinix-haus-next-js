@@ -66,47 +66,22 @@ const personDetailJsonLd = {
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Founder & Certified Personal Trainer"
-        title="Kelly Gunn."
-        lead="Writer, triathlete, bodybuilder, and the woman behind Feinix Haus. After a breast cancer diagnosis in 2024, she stopped postponing her life and built the community she couldn't find."
-        breadcrumb="About"
-      />
-
       {/* Bio Section */}
-      <section className="py-20 md:py-28 bg-cream" aria-label="Kelly Gunn biography">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <ScrollReveal>
-              <div className="photo-mat">
-                <Image
-                  src="/editorial/kelly-portrait.png"
-                  alt="Kelly Gunn — Founder of Feinix Haus, editorial portrait in Palm Springs"
-                  width={600}
-                  height={750}
-                  className="w-full h-auto object-cover rounded-sm"
-                />
-                <div className="flex justify-between items-center mt-3 px-0.5">
-                  <span className="text-[0.78rem] tracking-[0.12em] uppercase text-text-muted font-medium">
-                    Kelly Gunn
-                  </span>
-                  <span className="text-[0.78rem] tracking-[0.12em] uppercase text-text-muted font-medium">
-                    Founder &amp; Certified PT
-                  </span>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.15}>
-              <div className="pt-4">
-                <span className="text-[0.78rem] font-sans font-medium tracking-[0.2em] uppercase text-accent mb-4 block">
-                  The Story
-                </span>
-                <h2 className="font-serif text-2xl md:text-3xl text-ink-warm font-light mb-6">
-                  From the standstill to <em className="italic">the start line.</em>
+      <section className="pt-[200px] pb-20 md:pt-[260px] lg:pt-[280px] md:pb-32 bg-cream" aria-label="Kelly Gunn biography">
+        <div className="max-w-[1600px] mx-auto lg:px-6 xl:px-10">
+          <div className="relative w-full flex flex-col lg:flex-row shadow-2xl">
+            
+            {/* Left Dark Box */}
+            <div className="w-full lg:w-[65%] bg-[#181818] pt-16 pb-20 px-8 md:px-16 lg:pl-20 xl:pl-28 lg:pr-[280px] xl:pr-[380px] relative z-10 flex flex-col justify-center">
+              <ScrollReveal>
+                <h2 className="font-serif text-[clamp(4rem,6vw,7rem)] text-cream uppercase tracking-wide mb-4 leading-[1.05] whitespace-nowrap">
+                  HI, I&apos;M KELLY
                 </h2>
-                <div className="space-y-5 text-lg text-text-secondary leading-relaxed">
-                  <p className="drop-cap">
+                <p className="font-serif text-2xl md:text-3xl text-cream/90 italic leading-snug mb-8 max-w-[28rem]">
+                  From the standstill to the start line.
+                </p>
+                <div className="space-y-6 text-[1rem] md:text-[1.15rem] text-cream/80 leading-[1.8] max-w-xl font-sans font-light tracking-wide">
+                  <p>
                     Kelly was living a good life in Hawaii—surfing and running a swimsuit company—but she was drinking too much and postponing the good parts. A move to Central America was meant to be her fresh start, until a suspicious ultrasound ended the fantasy.
                   </p>
                   <p>
@@ -115,24 +90,66 @@ export default function AboutPage() {
                   <p>
                     She shared her raw, unapologetic experience on TikTok, and it resonated deeply with a community of women who felt invisible. The medical system handed them a finish line, and the wellness world wanted them constantly healing.
                   </p>
-                  <p>
-                    Feinix Haus was born as a sanctuary—a room for women who, after adversity, need a place to land. An homage to the Phoenix rising, but built for women who refuse to be ordinary. Because life is too short to wait for the &ldquo;right time&rdquo; to start living.
-                  </p>
                 </div>
-
-                <div className="mt-8 pt-8 border-t border-border-subtle">
-                  <span className="text-[0.75rem] font-sans font-medium tracking-[0.15em] uppercase text-text-muted mb-3 block">
+                
+                <div className="mt-12 pt-8 border-t border-cream/10">
+                  <span className="text-[0.9rem] font-sans font-medium tracking-[0.15em] uppercase text-cream/50 mb-5 block">
                     CREDENTIALS &amp; FEATURES
                   </span>
-                  <ul className="flex flex-wrap gap-x-2 gap-y-1 text-base text-text-secondary italic">
-                    <li className="flex items-center gap-2">Certified Personal Trainer <span className="text-text-muted">·</span></li>
-                    <li className="flex items-center gap-2">Ironman Triathlete <span className="text-text-muted">·</span></li>
-                    <li className="flex items-center gap-2">Sober <span className="text-text-muted">·</span></li>
-                    <li className="flex items-center">C-Heads Magazine Interview</li>
+                  <ul className="flex flex-col gap-3 text-[1.15rem] text-cream/90 italic font-serif">
+                    <li className="flex items-center gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent/80"></span> Certified Personal Trainer
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent/80"></span> Ironman Triathlete
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent/80"></span> Sober
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent/80"></span> C-Heads Magazine Interview
+                    </li>
                   </ul>
                 </div>
-              </div>
-            </ScrollReveal>
+              </ScrollReveal>
+            </div>
+
+            {/* Right Large Image */}
+            <div className="w-full lg:w-[35%] relative min-h-[600px] lg:min-h-0 bg-[#d8d9d4] z-0 overflow-hidden">
+              <Image 
+                src="/editorial/kelly-profile3.jpg" 
+                alt="Kelly Gunn Full Portrait" 
+                fill
+                className="object-cover object-center scale-[1.02]"
+              />
+            </div>
+
+            {/* Center Overlapping Image (Desktop) */}
+            <div className="hidden lg:block absolute left-[65%] top-1/2 -translate-x-[65%] -translate-y-1/2 w-[340px] xl:w-[400px] z-20 shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
+              <ScrollReveal delay={0.2}>
+                <Image 
+                  src="/editorial/kelly-profile2.jpg" 
+                  alt="Kelly Gunn Profile" 
+                  width={600} 
+                  height={800} 
+                  className="w-full h-auto object-cover grayscale-[20%]" 
+                />
+              </ScrollReveal>
+            </div>
+
+            {/* Mobile Overlapping Image */}
+            <div className="block lg:hidden absolute left-6 top-[40%] sm:top-[45%] -translate-y-1/2 w-[55%] sm:w-[45%] max-w-[280px] z-20 shadow-2xl border-4 border-[#181818]">
+              <ScrollReveal delay={0.2}>
+                <Image 
+                  src="/editorial/kelly-profile2.jpg" 
+                  alt="Kelly Gunn Profile" 
+                  width={600} 
+                  height={800} 
+                  className="w-full h-auto object-cover grayscale-[20%]" 
+                />
+              </ScrollReveal>
+            </div>
+            
           </div>
         </div>
       </section>

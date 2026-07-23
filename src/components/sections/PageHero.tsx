@@ -59,7 +59,7 @@ export default function PageHero({
           </h1>
 
           <p
-            className={`text-lg md:text-xl leading-relaxed max-w-xl ${
+            className={`text-lg md:text-xl leading-relaxed max-w-xl text-justify md:text-left ${
               textColor === "text-cream" ? "text-cream/80" : "text-text-secondary"
             }`}
           >

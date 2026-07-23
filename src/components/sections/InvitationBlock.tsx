@@ -20,7 +20,7 @@ export default function InvitationBlock() {
           <h2 className="font-serif text-4xl md:text-5xl text-ink-warm font-light mb-5">
             Now do <em className="italic">the thing.</em>
           </h2>
-          <p className="text-xl md:text-2xl text-text-secondary leading-relaxed mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-text-secondary leading-relaxed mb-8 max-w-2xl mx-auto text-justify md:text-left">
             Read the essays, join the community, or apply for the editorial
             work. Whichever door, the house is open.
           </p>

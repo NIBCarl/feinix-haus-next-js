@@ -70,7 +70,7 @@ export default function FeaturedEssay() {
             <h3 className="font-serif text-2xl md:text-3xl text-ink-warm font-light mb-4" itemProp="headline">
               I Am Not Here to <em className="italic">Inspire You</em>
             </h3>
-            <p className="text-lg text-text-secondary leading-relaxed mb-6 drop-cap" itemProp="description">
+            <p className="text-lg text-text-secondary leading-relaxed mb-6 drop-cap text-justify md:text-left" itemProp="description">
               There comes a point when surviving stops being enough. A reflection
               on moving past inspiration tropes into participation,
               self-authorship, and what comes next.

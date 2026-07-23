@@ -65,7 +65,7 @@ export default function VolumeFeature({
         <h3 className="font-serif text-2xl md:text-3xl text-ink-warm font-light mb-4">
           {title} <em className="italic">{titleEmphasis}</em>
         </h3>
-        <p className="text-lg text-text-secondary leading-relaxed drop-cap mb-6">
+        <p className="text-lg text-text-secondary leading-relaxed drop-cap mb-6 text-justify md:text-left">
           {description}
         </p>
         {includes && includes.length > 0 && (

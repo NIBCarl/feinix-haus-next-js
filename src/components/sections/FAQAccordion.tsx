@@ -132,7 +132,7 @@ export default function FAQAccordion({
                       }}
                       className="overflow-hidden"
                     >
-                      <p className="text-base text-text-secondary leading-relaxed pb-6 pr-8">
+                      <p className="text-base text-text-secondary leading-relaxed pb-6 pr-8 text-justify md:text-left">
                         {faq.answer}
                       </p>
                     </motion.div>

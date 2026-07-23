@@ -83,7 +83,7 @@ export default function MembershipTiers() {
               <h3 className="font-serif text-xl text-cream mb-3">
                 {tier.title}
               </h3>
-              <p className="text-base text-cream/70 leading-relaxed mb-6">
+              <p className="text-base text-cream/70 leading-relaxed mb-6 text-justify md:text-left">
                 {tier.desc}
               </p>
               <ul className="space-y-2.5 mb-8">

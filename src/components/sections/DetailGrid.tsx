@@ -34,7 +34,7 @@ export default function DetailGrid({ items }: DetailGridProps) {
           <h4 className="font-serif text-xl text-ink-warm mb-2">
             {item.title}
           </h4>
-          <p className="text-base text-text-secondary leading-relaxed">
+          <p className="text-base text-text-secondary leading-relaxed text-justify md:text-left">
             {item.desc}
           </p>
         </motion.div>

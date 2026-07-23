@@ -146,7 +146,7 @@ export default function EssayArchive() {
               <h3 className="font-serif text-lg text-ink-warm group-hover:text-accent transition-colors duration-300 mb-1">
                 {essay.title}
               </h3>
-              <p className="text-base text-text-secondary">{essay.excerpt}</p>
+              <p className="text-base text-text-secondary text-justify md:text-left">{essay.excerpt}</p>
             </motion.a>
           ))}
         </motion.div>

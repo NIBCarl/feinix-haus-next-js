@@ -80,7 +80,7 @@ export default function AboutPage() {
                 <p className="font-serif text-2xl md:text-3xl text-cream/90 italic leading-snug mb-8 max-w-[28rem]">
                   From the standstill to the start line.
                 </p>
-                <div className="space-y-6 text-[1rem] md:text-[1.15rem] text-cream/80 leading-[1.8] max-w-xl font-sans font-light tracking-wide">
+                <div className="space-y-6 text-[1rem] md:text-[1.15rem] text-cream/80 leading-[1.8] max-w-xl font-sans font-light tracking-wide text-justify md:text-left">
                   <p>
                     Kelly was living a good life in Hawaii—surfing and running a swimsuit company—but she was drinking too much and postponing the good parts. A move to Central America was meant to be her fresh start, until a suspicious ultrasound ended the fantasy.
                   </p>

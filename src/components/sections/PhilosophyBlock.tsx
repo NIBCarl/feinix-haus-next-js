@@ -37,7 +37,7 @@ export default function PhilosophyBlock() {
             </motion.h2>
 
             <motion.p
-              className="text-[1.1rem] md:text-xl text-text-secondary leading-relaxed drop-cap max-w-xl"
+              className="text-[1.1rem] md:text-xl text-text-secondary leading-relaxed drop-cap max-w-xl text-justify md:text-left"
               variants={textMaskLine}
             >
               The wellness industry sells the idea that if you visualize hard enough 

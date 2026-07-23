@@ -23,12 +23,12 @@ export default function ApplyForm() {
               <br />
               <em className="italic">By application</em> only.
             </h2>
-            <p className="text-lg text-cream/70 leading-relaxed mb-4">
+            <p className="text-lg text-cream/70 leading-relaxed mb-4 text-justify md:text-left">
               We curate the room as carefully as we curate the editorial. Tell us
               a little about where you are and what you&apos;re editing next —
               Kelly reads every application personally.
             </p>
-            <p className="text-lg text-cream/70 leading-relaxed">
+            <p className="text-lg text-cream/70 leading-relaxed text-justify md:text-left">
               If the fit is right, we&apos;ll send the Volume I details, the
               timing, and the investment. If it isn&apos;t yet, we&apos;ll tell you
               that too — and often point you somewhere better.
